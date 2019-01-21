@@ -1,0 +1,54 @@
+*** Settings ***
+Test Setup        Log To Console    Test Suite Started
+Test Teardown     Log To Console    Test Suite Completed
+Library           SeleniumLibrary
+
+*** Variables ***
+${url}            https://www.google.com/
+${name}           ghuang030201@gmail.com
+@{Credential}     ghuang030201@gmail.com    #Suping002#
+&{LOGIN}          Username=ghuang030201@gmail.com    Password=#Suping002#
+
+*** Test Cases ***
+Test1
+    [Documentation]    This is the first robot test case
+    SeleniumLibrary.Open Browser    ${url}    chrome
+    SeleniumLibrary.Close Browser
+
+Test2_Fire
+    SeleniumLibrary.Open Browser    https://www.google.com/    firefox
+    SeleniumLibrary.Close Browser
+    Log To Console    Completed Successfully
+
+Test2_Login
+    [Documentation]    This test case is to login to a web page with username and password via chrome browser.
+    SeleniumLibrary.Open Browser    https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&service=mail&sacu=1&rip=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin    chrome
+    Input Text    id=identifierId    @{Credential}[0]
+    Click Button    id=identifierNext
+    Input Password    id=password    @{Credential}[1] or &{LOGIN}[Password]
+    Click Button    id=passwordNext
+    Log To Console    %{username} ran this test on %{os}
+
+Test3_Login_UserKeyword
+    [Tags]    Test3
+    [Setup]    GoToHomePage
+    Open Browser    ${url}    chrome
+    LOGIN
+    Close All Browsers
+    [Teardown]    Close Browser
+
+Test4
+    [Tags]    Sanity    Smoke    Test4
+    Log To Console    Test4 started
+    Open Browser    https://www.google.com/    chrome
+    Close All Browsers
+    Log To Console    Test4 Completed
+
+*** Keywords ***
+LOGIN
+    Input Text    id=identifierId    ghuang030201@gmail.com
+    Input Password    id=password    #Suping002#
+    Click Button    id=btn
+
+GoToHomePage
+    Open Browser    https://www.google.com/    chrome

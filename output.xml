@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20190118 23:47:59.123" generator="Robot 3.0.2 (Python 2.7.14 on win32)">
+<suite source="C:\Users\Henry\TestFolder\Projects\Robot\Project1\TestSuite1.txt" id="s1" name="TestSuite1">
+<test id="s1-t1" name="Test4">
+<kw type="setup" name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Test Suite Started</arg>
+</arguments>
+<status status="PASS" endtime="20190118 23:47:59.361" starttime="20190118 23:47:59.359"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Test4 started</arg>
+</arguments>
+<status status="PASS" endtime="20190118 23:47:59.363" starttime="20190118 23:47:59.362"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>https://www.google.com/</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20190118 23:47:59.365" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com/'.</msg>
+<status status="PASS" endtime="20190118 23:48:06.562" starttime="20190118 23:47:59.364"></status>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20190118 23:48:08.792" starttime="20190118 23:48:06.562"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Test4 Completed</arg>
+</arguments>
+<status status="PASS" endtime="20190118 23:48:08.796" starttime="20190118 23:48:08.793"></status>
+</kw>
+<kw type="teardown" name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Test Suite Completed</arg>
+</arguments>
+<status status="PASS" endtime="20190118 23:48:08.806" starttime="20190118 23:48:08.802"></status>
+</kw>
+<tags>
+<tag>Sanity</tag>
+<tag>Smoke</tag>
+<tag>Test4</tag>
+</tags>
+<status status="PASS" endtime="20190118 23:48:08.807" critical="yes" starttime="20190118 23:47:59.358"></status>
+</test>
+<status status="PASS" endtime="20190118 23:48:08.819" starttime="20190118 23:47:59.127"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="1">Sanity</stat>
+<stat fail="0" pass="1">Smoke</stat>
+<stat fail="0" pass="1">Test4</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="TestSuite1" pass="1">TestSuite1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
